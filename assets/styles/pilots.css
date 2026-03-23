@@ -1,0 +1,437 @@
+/* Russo One */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+/* exo 2 */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+/* Основные цвета:
+Фон: #15151E (базовый темный)
+Акцентный: #FF1801 (красный F1)
+Текст: #FFFFFF (белый основной)
+
+Дополнительные цвета:
+#1C1C25 (карточки)
+#1E1E28 (элементы интерфейса)
+#252532 (блоки статистики)
+#2A2A35 (границы)
+#E0E0E0 (основной текст)
+#AAAAAA (второстепенный текст)*/
+
+:root {
+    --main-back-color: #15151e;
+    --second-back-color: #252532;
+    --interface-element: #1E1E28;
+    --accent-colot: #FF1801;
+    --main-text: #e0e0e0;
+    --second-text: #AAAAAA;
+    --card-background: #1c1c25;
+    --card-border: #15151E;
+
+    --main-font: "Russo One";
+    --second-font: "exo 2";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:var(--second-font);
+  list-style: none;
+  text-decoration: none;
+  color: var(--main-text);
+    font-weight: normal;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.top-header-block {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--second-back-color);
+    padding: 1vh 3vw;
+    height: 7vh;
+    z-index: 35;
+}
+/* Стилизация мобильного меню */
+.menu-window {
+  position: absolute;
+  background-color: #1C1C25;
+  width: 100vw;
+  height: 93vh;
+  bottom: 0;
+  right: 100vw;
+  transition: .3s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.open-main-menu-window {
+  right: 0;
+  z-index: 30;
+}
+body.no-scroll {
+  overflow: hidden; /* убирает вертикальный и горизонтальный скролл */
+  height: 100vh;    /* фиксируем высоту окна */
+}
+
+.logo-block {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.logo-block span {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+.account-block {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.bi-bell {
+    width: 20px;
+    fill: var(--main-text);
+    cursor: pointer;
+}
+.vertical-line {
+    width: 2px;
+    height: 30px;
+    background-color: var(--second-text);
+}
+.user-block {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--main-back-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.user-block:hover {
+  filter: invert(100%);
+}
+.bi-person {
+    fill: var(--main-text);
+    width: 20px;
+}
+.user-block span {
+    color: var(--main-text);
+}
+.bottom-header-block {
+    background-color: var(--interface-element);
+    padding: 2vh 3vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.bottom-user-block {
+    display: none;
+}
+
+.bottom-header-block ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+}   
+.bottom-header-block ul li {
+    font-size: 1rem;
+    margin: 1vh 2vw;
+}
+.menu-line-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: none;
+}
+.menu-line {
+  outline: 1px solid var(--main-text);
+  transition: .3s;
+  width: 100%;
+}
+.menu-line:nth-child(2) {
+  width: 50%;
+}
+
+/* Стилизация основной секции */
+.main-pilots-section {
+    width: 100%;
+    padding: 2vh 3vw;
+    background-color: var(--main-back-color);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.section-head {
+    font-family: var(--main-font);
+    font-weight: normal;
+}
+.search-block {
+    display: flex;
+    gap: 15px;
+}
+.bi-search {
+    width: 15px;
+    fill: var(--main-text);
+}
+.input-block, .all-filters-block {
+    position: relative;
+}
+.input-block .bi-search, .all-filters-block .bi-arrow-down-short{
+    position: absolute;
+}
+.input-block .bi-search {
+    right: 10px;
+    transform: translateY(90%);
+}
+.all-filters-block .bi-arrow-down-short {
+    right: 10px;
+    transform: translateY(50%);
+}
+.bi-arrow-down-short {
+    width: 20px;
+    fill: var(--main-text);
+}
+.comand-select, .all-filters-block, .input-block {
+    height: 41px;
+    background-color: var(--interface-element);
+    border: none;
+}
+.comand-select {
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.input-block > input {
+    height: 100%;
+    background-color: var(--interface-element);
+    border: none;
+    padding: 10px 33px 10px 10px;
+}
+.filters {
+    height: 100%;
+    background-color: var(--interface-element);
+    border: none;
+    padding: 10px 33px 10px 10px;
+    cursor: pointer;
+}
+
+.pilots-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.pilot-block {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    min-width: 300px;
+    flex: 1 1 45%;
+    transition: .3s;
+    gap: 10px;
+    border-radius: 5px;
+}
+.red-bull-block {
+    background: linear-gradient(135deg, #1C1C25 20%, #1E41FF 60%, #3671FF 60%, #1C1C25 90%);
+}
+.ferrari-block {
+    background: linear-gradient(135deg, #1C1C25 20%, #DC0000 60%, #FF2800 60%, #1C1C25 90%);
+}
+.mercedes-block {
+    background: linear-gradient(135deg, #1C1C25 20%, #FF8700 60%, #FFB300 60%, #1C1C25 90%);
+}
+.pilot-img {
+    width: 30%;
+    height: max-content;
+    margin-top: auto;
+}   
+.pilot-info-block {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  padding: 30px 0;
+}
+.name-command-block {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.name-command-block img {
+    height: 14px;
+    width: auto;
+}
+.pilot-name {
+    font-family: var(--main-font);
+    font-size: 1.25rem;
+}
+.pilot-number {
+    font-size: 1.125rem;
+}
+.season-position {
+  font-size: 0.9rem;
+}
+.points-country-block {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.points {
+    font-family: var(--main-font);
+    font-size: 0.8rem;
+}
+.country {
+    border-radius: 50%;
+    width: 22px;
+}
+/* Стилизация окна фильтра */
+.filter-window {
+    position: absolute;
+    background-color: var(--interface-element);
+    width: 100%;
+    max-width: 500px;
+    margin: 2vh 3vw;  
+    padding: 10px 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+/* Стилизация футера */
+footer {
+    background-color: #15151E;
+    padding: 2vh 3vw;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+.footer-info-block {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
+}
+.user-info-block {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.user-info-block h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+.user-info-block a {
+    font-size: 1rem;
+}
+.emailing-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.emailing-block input {
+    background-color: #1E1E28;
+    border: 1px solid #2A2A35;
+    height: 40px;
+    padding: 10px;
+}
+.emailing-block button {
+    background-color: #1E1E28;
+    border: 1px solid #2A2A35;
+    height: 40px;
+    width: 50%;
+    margin-left: auto;
+}
+.emailing-block h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+.emailing-description {
+    font-size: 1rem;
+}
+.footer-social-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.footer-social-block a svg {
+  height: 30px;
+  width: 30px;
+  transition: .3s;
+  fill: #1E1E28;
+}
+
+.bi-telegram:hover {
+  fill: #27a7e7;
+}
+
+.bi-youtube:hover {
+  fill: #c4302b;
+}
+
+.bi-twitch:hover {
+  fill: #9146FF;
+}
+.footer-gorizontal-line {
+    height: 1px;
+    width: 100%;
+    background-color: #2A2A35;
+}
+.footer-more-info {
+    text-align: center;
+    width: 100%; 
+}
+@media (max-width: 920px) {
+    .menu-line-block {
+        display: inherit;
+    }
+
+    .pilot-block {
+        flex: 1 1 50%;
+    }
+
+    .account-block {
+        display: none;
+    }
+
+    .bottom-user-block {
+        display: inherit;
+    }
+
+    .bottom-header-block ul {
+        display: none;
+    }
+
+    .bottom-header-block {
+        justify-content: right;
+    }
+}
+@media (max-width: 490px) {
+    .comand-select {
+        display: none;
+    }
+    .input-block {
+        flex: 1 1;
+    }
+}
